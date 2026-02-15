@@ -60,6 +60,15 @@ So isso. Um binario. Sem `node_modules`. Sem runtime. Apenas sua aplicacao.
 
 ---
 
+## 🌟 Exemplo
+
+Veja um projeto real utilizando este modulo:
+
+- **Repositorio:** [nuxt-duckdb-wasm](https://github.com/jprando/nuxt-duckdb-wasm)
+- **Demo:** [https://nuxt-duckdb-wasm.jeudi.workers.dev/](https://nuxt-duckdb-wasm.jeudi.workers.dev/)
+
+---
+
 ## 🎯 O que faz
 
 O modulo se conecta ao pipeline de build do Nuxt e cuida de **tudo** automaticamente:

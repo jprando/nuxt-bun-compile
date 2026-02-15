@@ -60,7 +60,16 @@ That's it. One binary. No `node_modules`. No runtime. Just your app.
 
 ---
 
-## 🎯 What It Does
+## 🌟 Example
+
+Check out a real project using this module:
+
+- **Repository:** [nuxt-duckdb-wasm](https://github.com/jprando/nuxt-duckdb-wasm)
+- **Demo:** [https://nuxt-duckdb-wasm.jeudi.workers.dev/](https://nuxt-duckdb-wasm.jeudi.workers.dev/)
+
+---
+
+## � What It Does
 
 The module hooks into Nuxt's build pipeline and handles **everything** automatically:
 
