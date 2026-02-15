@@ -27,14 +27,12 @@
 ## ⚡ Quick Start
 
 ```bash
-# Install from npm (when published)
-bun add -D nuxt-bun-compile
-
-# Or install directly from GitHub
+# Install directly from GitHub
 bun add -D github:jprando/nuxt-bun-compile
 
 # Or link locally for development
-cd nuxt-bun-compile && bun link
+git clone https://github.com/jprando/nuxt-bun-compile.git
+cd nuxt-bun-compile && bun install && bun link
 cd your-nuxt-app && bun link nuxt-bun-compile
 ```
 
