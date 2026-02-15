@@ -8,7 +8,6 @@ export interface ModuleOptions {
   outfile: string;
   extraExternals: (string | RegExp)[];
   autoCompile: boolean;
-  maxMemory: number;
 }
 
 const DEFAULT_EXTERNALS: (string | RegExp)[] = [
@@ -33,7 +32,6 @@ export default defineNuxtModule<ModuleOptions>({
     outfile: "nuxtbin",
     extraExternals: [],
     autoCompile: true,
-    maxMemory: 8192,
   },
   setup(options: ModuleOptions, nuxt: Nuxt) {
     if (!options.enabled) return;
@@ -41,7 +39,7 @@ export default defineNuxtModule<ModuleOptions>({
     const logger = useLogger("nuxt-bun-compile");
 
     // Configure Nitro for bun compile
-    nuxt.hook("nitro:config", (nitroConfig: NitroConfig) => {
+    nuxt.hook("nitro:config" as any, (nitroConfig: NitroConfig) => {
       logger.info("Configuring Nitro for bun --compile build");
 
       nitroConfig.preset = "bun";
@@ -69,7 +67,7 @@ export default defineNuxtModule<ModuleOptions>({
       if (options.autoCompile) {
         nitroConfig.hooks = nitroConfig.hooks || {};
         nitroConfig.hooks.compiled = () => {
-          const isBun = typeof globalThis.Bun !== "undefined"
+          const isBun = typeof (globalThis as any).Bun !== "undefined"
             || process.versions.bun !== undefined;
 
           if (!isBun) {

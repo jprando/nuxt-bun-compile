@@ -86,7 +86,6 @@ O modulo se conecta ao pipeline de build do Nuxt e cuida de **tudo** automaticam
 | `outfile` | `string` | `"nuxtbin"` | Nome do arquivo binario de saida |
 | `extraExternals` | `(string \| RegExp)[]` | `[]` | Pacotes adicionais para marcar como external |
 | `autoCompile` | `boolean` | `true` | Executar `bun build --compile` automaticamente apos o build |
-| `maxMemory` | `number` | `8192` | Valor de referencia para `--max-old-space-size` (MB) |
 
 ---
 

@@ -86,7 +86,6 @@ The module hooks into Nuxt's build pipeline and handles **everything** automatic
 | `outfile` | `string` | `"nuxtbin"` | Output binary filename |
 | `extraExternals` | `(string \| RegExp)[]` | `[]` | Additional packages to mark as external |
 | `autoCompile` | `boolean` | `true` | Run `bun build --compile` automatically after build |
-| `maxMemory` | `number` | `8192` | Reference value for `--max-old-space-size` (MB) |
 
 ---
 
