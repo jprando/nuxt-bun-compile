@@ -1,0 +1,25 @@
+{
+  "name": "nuxt-bun-compile",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./src/module.ts",
+  "scripts": {
+    "format": "dprint fmt package.json tsconfig.json dprint.json ./src/**/*.ts"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.17.5",
+    "@nuxt/schema": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "dprint": "^0.51.1"
+  },
+  "packageManager": "bun@1.3.9",
+  "engines": {
+    "node": "^24.13.1",
+    "npm": "^11.10.0",
+    "pnpm": "^10.29.3",
+    "bun": "^1.3.9"
+  },
+  "trustedDependencies": ["dprint"]
+}

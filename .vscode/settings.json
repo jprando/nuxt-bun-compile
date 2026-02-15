@@ -1,0 +1,15 @@
+{
+    "dprint.path": "./node_modules/.bin/dprint",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "files.trimTrailingWhitespace": true,
+    "explorer.fileNesting.enabled": true,
+    "editor.defaultFormatter": "dprint.dprint",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+    "editor.rulers": [
+        80,
+        100,
+        120
+    ]
+}

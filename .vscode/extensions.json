@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "dprint.dprint",
+        "nuxtr.nuxtr-vscode",
+        "usernamehw.errorlens",
+        "oderwat.indent-rainbow",
+        "ms-vscode.vscode-typescript-next",
+        "davidanson.vscode-markdownlint",
+        "pkief.material-icon-theme",
+        "yoavbls.pretty-ts-errors",
+        "pflannery.vscode-versionlens",
+        "fab1o.dark-plus-with-italics"
+    ]
+}
