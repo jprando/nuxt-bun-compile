@@ -1,5 +1,6 @@
 import { defineNuxtModule, useLogger } from "@nuxt/kit";
 import type { Nuxt } from "@nuxt/schema";
+import type { NitroConfig } from "nitropack/types";
 import { execSync } from "node:child_process";
 
 export interface ModuleOptions {
@@ -40,7 +41,7 @@ export default defineNuxtModule<ModuleOptions>({
     const logger = useLogger("nuxt-bun-compile");
 
     // Configure Nitro for bun compile
-    nuxt.hook("nitro:config", (nitroConfig) => {
+    nuxt.hook("nitro:config", (nitroConfig: NitroConfig) => {
       logger.info("Configuring Nitro for bun --compile build");
 
       nitroConfig.preset = "bun";
@@ -63,34 +64,32 @@ export default defineNuxtModule<ModuleOptions>({
       } else {
         nitroConfig.rollupConfig.external = allExternals;
       }
+
+      // Auto-compile after Nitro build completes
+      if (options.autoCompile) {
+        nitroConfig.hooks = nitroConfig.hooks || {};
+        nitroConfig.hooks.compiled = () => {
+          const isBun = typeof globalThis.Bun !== "undefined"
+            || process.versions.bun !== undefined;
+
+          if (!isBun) {
+            logger.warn("Bun runtime not detected, skipping --compile step. Run with bun to enable.");
+            return;
+          }
+
+          const outputPath = ".output/server/index.mjs";
+          const cmd = `bun build ${outputPath} --compile --outfile ${options.outfile}`;
+
+          logger.info(`Bun v${process.versions.bun} detected, running --compile step`);
+          logger.info(`Compiling binary: ${cmd}`);
+          try {
+            execSync(cmd, { stdio: "inherit", cwd: nuxt.options.rootDir });
+            logger.success(`Binary created: ${options.outfile}`);
+          } catch (err) {
+            logger.error("bun build --compile failed:", err);
+          }
+        };
+      }
     });
-
-    // Auto-compile after build
-    if (options.autoCompile) {
-      nuxt.hook("close", () => {
-        const isBuild = nuxt.options._build || nuxt.options._generate;
-        if (!isBuild) return;
-
-        // Check if running under Bun
-        const isBun = typeof globalThis.Bun !== "undefined"
-          || process.versions.bun !== undefined;
-
-        if (!isBun) {
-          logger.warn("Bun runtime not detected, skipping --compile step. Run with bun to enable.");
-          return;
-        }
-
-        const outputPath = ".output/server/index.mjs";
-        const cmd = `bun build ${outputPath} --compile --outfile ${options.outfile}`;
-
-        logger.info(`Compiling binary: ${cmd}`);
-        try {
-          execSync(cmd, { stdio: "inherit", cwd: nuxt.options.rootDir });
-          logger.success(`Binary created: ${options.outfile}`);
-        } catch (err) {
-          logger.error("bun build --compile failed:", err);
-        }
-      });
-    }
   },
 });
