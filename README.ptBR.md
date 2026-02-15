@@ -20,7 +20,7 @@
 > bun run -b build     # ✅ gera o binario (nuxtbin ou o nome definido em outfile)
 > ```
 >
-> O parametro **`-b`** (ou `--bun`) forca o Bun a ser utilizado como runtime ao executar o script, garantindo que `globalThis.Bun` e `process.versions.bun` estejam disponiveis. Sem esse parametro, o Bun delega a execucao ao Node.js, e o modulo nao detecta o runtime Bun — pulando a etapa de compilacao do binario.
+> [Por que é necessário o parâmetro `-b`?](https://github.com/jprando/nuxt-bun-compile/blob/main/README.ptBR.md#por-que-o--b-eh-obrigatorio)
 
 ---
 

@@ -20,7 +20,7 @@
 > bun run -b build     # ✅ generates the binary (nuxtbin or the name set in outfile)
 > ```
 >
-> The **`-b`** (or `--bun`) flag forces Bun to be used as the runtime when executing the script, ensuring that `globalThis.Bun` and `process.versions.bun` are available. Without this flag, Bun delegates execution to Node.js, and the module cannot detect the Bun runtime — skipping the binary compilation step.
+> [Why is `-b` required?](https://github.com/jprando/nuxt-bun-compile?tab=readme-ov-file#why-is--b-required)
 
 ---
 
