@@ -1,3 +1,12 @@
+# Ignore node_modules directory
 node_modules
+
+# Ignore .claude and .serena directories
 .claude
 .serena
+
+# ignore all .tgz files
+*.tgz
+
+# use bundle-lock.json instead of package-lock.json
+package-lock.json
