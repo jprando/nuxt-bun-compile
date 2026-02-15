@@ -7,7 +7,7 @@
     "format": "dprint fmt package.json tsconfig.json dprint.json ./src/**/*.ts"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.17.5",
+    "@nuxt/kit": "^3.21.1",
     "@nuxt/schema": "^4.3.1"
   },
   "devDependencies": {
