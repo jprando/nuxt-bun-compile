@@ -72,6 +72,8 @@ export default defineNuxtModule<ModuleOptions>({
 
           if (!isBun) {
             logger.warn("Bun runtime not detected, skipping --compile step. Run with bun to enable.");
+            logger.info("Try running: bun run -b build");
+            logger.info("Read more: https://github.com/jprando/nuxt-bun-compile?tab=readme-ov-file#why-is--b-required");
             return;
           }
 

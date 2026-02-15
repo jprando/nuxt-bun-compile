@@ -151,6 +151,7 @@ Quando voce executa `bun run build`, o Bun age como um **gerenciador de tarefas*
 const isBun = typeof globalThis.Bun !== "undefined"
   || process.versions.bun !== undefined;
 ```
+[src/module.ts:L70-L76](https://github.com/jprando/nuxt-bun-compile/blob/main/src/module.ts#L70-L76)
 
 O parametro **`-b`** (ou `--bun`) forca o Bun a ser o runtime que executa o script. Com ele, as variaveis acima ficam disponiveis e a etapa de `bun build --compile` eh executada corretamente.
 

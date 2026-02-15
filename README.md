@@ -151,6 +151,7 @@ When you run `bun run build`, Bun acts as a **task runner** and may delegate scr
 const isBun = typeof globalThis.Bun !== "undefined"
   || process.versions.bun !== undefined;
 ```
+[src/module.ts:L70-L76](https://github.com/jprando/nuxt-bun-compile/blob/main/src/module.ts#L70-L76)
 
 The **`-b`** (or `--bun`) flag forces Bun to be the runtime that executes the script. With it, the variables above become available and the `bun build --compile` step runs correctly.
 
