@@ -84,6 +84,7 @@ O modulo se conecta ao pipeline de build do Nuxt e cuida de **tudo** automaticam
 |---|---|---|---|
 | `enabled` | `boolean` | `true` | Habilitar/desabilitar o modulo |
 | `outfile` | `string` | `"nuxtbin"` | Nome do arquivo binario de saida |
+| `bunPath` | `string` | `undefined` | Caminho para o executável do bun. Pode ser um diretório (ex: `/opt/bun/`) ou o caminho direto para o binário (ex: `/opt/bun/bun`). Se for um diretório, '/bun' será anexado. O padrão é 'bun' do PATH do sistema. |
 | `extraExternals` | `(string \| RegExp)[]` | `[]` | Pacotes adicionais para marcar como external |
 | `autoCompile` | `boolean` | `true` | Executar `bun build --compile` automaticamente apos o build |
 

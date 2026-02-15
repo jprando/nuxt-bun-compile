@@ -2,12 +2,15 @@ import { defineNuxtModule, useLogger } from "@nuxt/kit";
 import type { Nuxt } from "@nuxt/schema";
 import type { NitroConfig } from "nitropack/types";
 import { execSync } from "node:child_process";
+import { statSync } from "node:fs";
+import { join } from "node:path";
 
 export interface ModuleOptions {
   enabled: boolean;
   outfile: string;
   extraExternals: (string | RegExp)[];
   autoCompile: boolean;
+  bunPath?: string;
 }
 
 const DEFAULT_EXTERNALS: (string | RegExp)[] = [
@@ -78,7 +81,22 @@ export default defineNuxtModule<ModuleOptions>({
           }
 
           const outputPath = ".output/server/index.mjs";
-          const cmd = `bun build ${outputPath} --compile --outfile ${options.outfile}`;
+          let bunExecutable = "bun";
+          if (options.bunPath) {
+            try {
+              const stats = statSync(options.bunPath);
+              if (stats.isDirectory()) {
+                bunExecutable = join(options.bunPath, "bun");
+              } else {
+                bunExecutable = options.bunPath;
+              }
+            } catch (error) {
+              logger.warn(`Could not stat bunPath "${options.bunPath}", assuming it's a direct path.`);
+              bunExecutable = options.bunPath;
+            }
+          }
+
+          const cmd = `${bunExecutable} build ${outputPath} --compile --outfile ${options.outfile}`;
 
           logger.info(`Bun v${process.versions.bun} detected, running --compile step`);
           logger.info(`Compiling binary: ${cmd}`);
