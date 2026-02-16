@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.9
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.8...v0.1.9)
+
+### 🚀 Enhancements
+
+- Skip module setup during nuxt prepare and show welcome message ([92ebfe6](https://github.com/jprando/nuxt-bun-compile/commit/92ebfe6))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.8
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.7...v0.1.8)
