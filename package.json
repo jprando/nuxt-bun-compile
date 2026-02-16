@@ -6,18 +6,8 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    ".": {
-      "types": "./dist/types.d.mts",
-      "import": "./dist/module.mjs"
-    },
-    "./module": {
-      "types": "./dist/types.d.mts",
-      "import": "./dist/module.mjs"
-    },
-    "./*": {
-      "types": "./dist/types.d.mts",
-      "import": "./dist/*"
-    }
+    ".": "./dist/module.mjs",
+    "./*": "./dist/*"
   },
   "main": "./dist/module.mjs",
   "module": "./dist/module.mjs",
