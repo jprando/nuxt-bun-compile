@@ -38,7 +38,7 @@
     "prepack": "bunx --bun nuxt-module-build build",
     "predev": "bun dev:prepare",
     "predev:build": "bun dev:prepare",
-    "prerelease": "bun format && bun lint && bun dev:prepare && bun test",
+    "prerelease": "bun format && bun lint && bun dev:prepare && bun run test",
     "prepare": "bunx --bun husky",
     "clear": "rm -rf node_modules .nuxt dist package-lock.json pnpm-lock.yaml nuxt-bun-compile-*.tgz playground/node_modules playground/.nuxt playground/.output playground/nuxtbin test/fixtures/basic/node_modules test/fixtures/basic/.nuxt"
   },
