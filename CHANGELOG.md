@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.14
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.13...v0.1.14)
+
+### 🚀 Enhancements
+
+- Set nitro preview command to run the compiled binary ([67418bf](https://github.com/jprando/nuxt-bun-compile/commit/67418bf))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.13
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.12...v0.1.13)
