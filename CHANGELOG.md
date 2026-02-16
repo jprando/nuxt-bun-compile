@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.1.15
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.14...v0.1.15)
+
+### 📖 Documentation
+
+- Add project logo and update README title ([04aa99a](https://github.com/jprando/nuxt-bun-compile/commit/04aa99a))
+- Add logo and update title in Portuguese README ([8e0a352](https://github.com/jprando/nuxt-bun-compile/commit/8e0a352))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.14
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.13...v0.1.14)
