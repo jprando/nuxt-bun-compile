@@ -41,15 +41,15 @@
     "dev:prepare": "bunx --bun nuxt-module-build build --stub && bunx --bun nuxt-module-build prepare && bunx --bun nuxt prepare playground",
     "format": "bun run --bun dprint fmt package.json tsconfig.json dprint.json ./src/*.ts ./src/**/*.ts",
     "lint": "bun run --bun eslint .",
-    "test": "bun run --bun vitest run",
+    "test": "bun run vitest run",
     "test:watch": "bun run --bun vitest watch",
-    "test:types": "bun run --bun vue-tsc --noEmit && cd playground && bun run --bun vue-tsc --noEmit",
+    "test:types": "bun run --bun vue-tsc --noEmit && bun run --cwd playground --bun vue-tsc --noEmit",
     "release": "bun lint && bun test && bun prepack && changelogen --release && npm publish && git push --follow-tags",
     "prepack": "bunx --bun nuxt-module-build build",
     "predev": "bun dev:prepare",
     "predev:build": "bun dev:prepare",
     "prepare": "bunx --bun husky",
-    "clear": "rm -rf nuxt-bun-compile-*.tgz .nuxt dist playground/.nuxt playground/.output playground/nuxtbin"
+    "clear": "rm -rf node_modules .nuxt dist nuxt-bun-compile-*.tgz playground/node_modules playground/.nuxt playground/.output playground/nuxtbin"
   },
   "dependencies": {
     "@nuxt/kit": "^4.3.1"
