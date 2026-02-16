@@ -1,5 +1,8 @@
 name: Package
 
+permissions:
+  contents: read # access to check out code and install dependencies
+
 on:
   push:
     branches:
@@ -15,14 +18,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: oven-sh/setup-bun@v2
-      - name: Clear
-        run: bun clear
+      - run: bun clear
       - name: Install dependencies
         run: bun install --frozen-lockfile
       - name: Format
         run: bun run -b format
       - name: Lint
         run: bun run -b lint
+      - run: bun clear
 
   test:
     runs-on: ubuntu-latest
@@ -30,12 +33,12 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: oven-sh/setup-bun@v2
-      - name: Clear
-        run: bun clear
+      - run: bun clear
       - name: Install dependencies
         run: bun install --frozen-lockfile
       - name: Test
         run: bun run -b test
+      - run: bun clear
 
   build:
     runs-on: ubuntu-latest
@@ -43,12 +46,12 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: oven-sh/setup-bun@v2
-      - name: Clear
-        run: bun clear
+      - run: bun clear
       - name: Install dependencies
         run: bun install --frozen-lockfile
       - name: Dev Build
         run: bun run -b dev:build
+      - run: bun clear
 
   pack:
     runs-on: ubuntu-latest
@@ -56,9 +59,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: oven-sh/setup-bun@v2
-      - name: Clear
-        run: bun clear
+      - run: bun clear
       - name: Install dependencies
         run: bun install --frozen-lockfile
       - name: Bun Pack
         run: bun pm pack
+      - run: bun clear

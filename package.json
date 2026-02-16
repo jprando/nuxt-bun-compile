@@ -49,7 +49,7 @@
     "predev": "bun dev:prepare",
     "predev:build": "bun dev:prepare",
     "prepare": "bunx --bun husky",
-    "clear": "rm -rf node_modules .nuxt dist nuxt-bun-compile-*.tgz playground/node_modules playground/.nuxt playground/.output playground/nuxtbin"
+    "clear": "rm -rf node_modules .nuxt dist package-lock.json pnpm-lock.yaml nuxt-bun-compile-*.tgz playground/node_modules playground/.nuxt playground/.output playground/nuxtbin test/fixtures/basic/node_modules test/fixtures/basic/.nuxt"
   },
   "dependencies": {
     "@nuxt/kit": "^4.3.1"
