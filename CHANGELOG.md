@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.13
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.12...v0.1.13)
+
+### 🚀 Enhancements
+
+- **playground:** Add styled UI with API fetch and test endpoint ([55ef05d](https://github.com/jprando/nuxt-bun-compile/commit/55ef05d))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.12
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.11...v0.1.12)
