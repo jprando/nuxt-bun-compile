@@ -73,6 +73,9 @@ export default defineNuxtModule<ModuleOptions>({
 
       const allExternals = [...DEFAULT_EXTERNALS, ...options.extraExternals]
 
+      nitroConfig.commands = nitroConfig.commands || {}
+      nitroConfig.commands.preview = `./${options.outfile}`
+
       nitroConfig.rollupConfig = nitroConfig.rollupConfig || {}
       const existing = nitroConfig.rollupConfig.external
       if (Array.isArray(existing)) {
