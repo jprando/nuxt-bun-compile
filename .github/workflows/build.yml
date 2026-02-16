@@ -17,8 +17,10 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - name: Install dependencies
         run: bun install --frozen-lockfile
+      - name: Format
+        run: bun run -b format
       - name: Lint
-        run: bunrun lint
+        run: bun run -b lint
 
   test:
     runs-on: ubuntu-latest
@@ -28,10 +30,10 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - name: Install dependencies
         run: bun install --frozen-lockfile
-      - name: Playground prepare
-        run: bun run dev:prepare
+      - name: Test types
+        run: bun run -b test:types
       - name: Test
-        run: bun run test
+        run: bun run -b test
 
   build:
     runs-on: ubuntu-latest
@@ -41,9 +43,20 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - name: Install dependencies
         run: bun install --frozen-lockfile
-      - name: Build without Bun runtime
-        run: bun run dev:build
-      - name: Build without Bun runtime
+      - name: Prepack
+        run: bun run -b prepack
+      - name: Dev Build
         run: bun run -b dev:build
-      - name: NPM Publish dry run
-        run: bun pm publish --dry-run
+      - name: Pack
+        run: bun pm pack
+
+  pack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+      - uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Bun Pack
+        run: bun pm pack

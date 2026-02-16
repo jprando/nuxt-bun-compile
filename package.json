@@ -36,17 +36,20 @@
     "playground"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build build",
-    "dev": "npm run dev:prepare && nuxt dev playground",
-    "dev:build": "nuxt build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
-    "lint": "eslint .",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
-    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit",
-    "format": "dprint fmt package.json tsconfig.json dprint.json ./src/*.ts ./src/**/*.ts",
-    "prepare": "husky"
+    "dev": "bunx --bun nuxt dev playground",
+    "dev:build": "bun --bun nuxt build playground",
+    "dev:prepare": "bunx --bun nuxt-module-build build --stub && bunx --bun nuxt-module-build prepare && bunx --bun nuxt prepare playground",
+    "format": "bun run --bun dprint fmt package.json tsconfig.json dprint.json ./src/*.ts ./src/**/*.ts",
+    "lint": "bun run --bun eslint .",
+    "test": "bun run --bun vitest run",
+    "test:watch": "bun run --bun vitest watch",
+    "test:types": "bun run --bun vue-tsc --noEmit && cd playground && bun run --bun vue-tsc --noEmit",
+    "release": "bun lint && bun test && bun prepack && changelogen --release && npm publish && git push --follow-tags",
+    "prepack": "bunx --bun nuxt-module-build build",
+    "predev": "bun dev:prepare",
+    "predev:build": "bun dev:prepare",
+    "prepare": "bunx --bun husky",
+    "clear": "rm -rf nuxt-bun-compile-*.tgz .nuxt dist playground/.nuxt playground/.output playground/nuxtbin"
   },
   "dependencies": {
     "@nuxt/kit": "^4.3.1"

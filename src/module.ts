@@ -40,7 +40,7 @@ export default defineNuxtModule<ModuleOptions>({
     if (!options.enabled) return
 
     const logger = useLogger('nuxt-bun-compile')
-
+    // @ts-expect-error - NitroConfig is not yet exported by nitropack, but we need it for type safety. Remove when nitropack exports NitroConfig.
     nuxt.hook('nitro:config', (nitroConfig: NitroConfig) => {
       if (
         globalThis.Bun?.env.TEST
