@@ -81,9 +81,6 @@ export default defineNuxtModule<ModuleOptions>({
       if (options.autoCompile) {
         nitroConfig.hooks = nitroConfig.hooks || {}
         nitroConfig.hooks.compiled = () => {
-          const isBun = typeof globalThis.Bun !== 'undefined'
-            || process.versions.bun !== undefined
-
           if (!isBun) {
             logger.warn('Bun runtime not detected, skipping --compile step. Run with bun to enable.')
             logger.info('Try running: bun run -b build')
