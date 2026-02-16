@@ -1,5 +1,10 @@
 {
   "typescript": {
+    "useTabs": false,
+    "indentWidth": 2,
+    "quoteStyle": "alwaysSingle",
+    "semiColons": "asi",
+    "nextControlFlowPosition": "nextLine"
   },
   "json": {
   },
@@ -18,6 +23,10 @@
   "excludes": [
     "**/node_modules",
     "**/.claude",
+    "**/.nuxt",
+    "**/.serena",
+    "**/dist",
+    "**/.output",
     "**/*-lock.json",
     "**/bun.lock"
   ],
