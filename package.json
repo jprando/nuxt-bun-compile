@@ -44,10 +44,11 @@
     "test": "bun run vitest run",
     "test:watch": "bun run --bun vitest watch",
     "test:types": "bun run --bun vue-tsc --noEmit && bun run --cwd playground --bun vue-tsc --noEmit",
-    "release": "bun lint && bun test && bun prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release": "bun prepack && changelogen --release && npm publish && git push --follow-tags",
     "prepack": "bunx --bun nuxt-module-build build",
     "predev": "bun dev:prepare",
     "predev:build": "bun dev:prepare",
+    "prerelease": "bun format && bun lint && bun dev:prepare && bun test",
     "prepare": "bunx --bun husky",
     "clear": "rm -rf node_modules .nuxt dist package-lock.json pnpm-lock.yaml nuxt-bun-compile-*.tgz playground/node_modules playground/.nuxt playground/.output playground/nuxtbin test/fixtures/basic/node_modules test/fixtures/basic/.nuxt"
   },
