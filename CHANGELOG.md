@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.12
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.11...v0.1.12)
+
+### 🩹 Fixes
+
+- Remove redundant dashes from compile step log message ([786c4cf](https://github.com/jprando/nuxt-bun-compile/commit/786c4cf))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.11
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.10...v0.1.11)
