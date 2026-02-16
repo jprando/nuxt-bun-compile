@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.1.7
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.7...v0.1.7)
+
+### 🩹 Fixes
+
+- **scripts:** Use `bun run test` in prerelease to ensure correct test execution ([700d7d0](https://github.com/jprando/nuxt-bun-compile/commit/700d7d0))
+
+### 💅 Refactors
+
+- Simplify package.json exports map ([684a446](https://github.com/jprando/nuxt-bun-compile/commit/684a446))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.6
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.3...v0.1.6)
