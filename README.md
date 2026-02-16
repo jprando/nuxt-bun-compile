@@ -69,7 +69,7 @@ Check out a real project using this module:
 
 ---
 
-## � What It Does
+## 🎯 What It Does
 
 The module hooks into Nuxt's build pipeline and handles **everything** automatically:
 
@@ -157,7 +157,7 @@ bun run -b build
 
 ### Why is `-b` required?
 
-When you run `bun run build`, Bun acts as a **task runner** and may delegate script execution to Node.js. In that scenario, `globalThis.Bun` and `process.versions.bun` **do not exist**, and the module cannot detect the Bun runtime:
+When you run `bun run build` (without `-b`), Bun acts as a **task runner** and may delegate script execution to Node.js. In that scenario, `globalThis.Bun` and `process.versions.bun` **do not exist**, and the module cannot detect the Bun runtime:
 
 ```ts
 const isBun = typeof globalThis.Bun !== "undefined"

@@ -157,7 +157,7 @@ bun run -b build
 
 ### Por que o `-b` eh obrigatorio?
 
-Quando voce executa `bun run build`, o Bun age como um **gerenciador de tarefas** e pode delegar a execucao do script ao Node.js. Nesse cenario, as variaveis `globalThis.Bun` e `process.versions.bun` **nao existem**, e o modulo nao consegue detectar o runtime Bun:
+Quando voce executa `bun run build` (sem `-b`), o Bun age como um **gerenciador de tarefas** e pode delegar a execucao do script ao Node.js. Nesse cenario, as variaveis `globalThis.Bun` e `process.versions.bun` **nao existem**, e o modulo nao consegue detectar o runtime Bun:
 
 ```ts
 const isBun = typeof globalThis.Bun !== "undefined"
