@@ -1,6 +1,8 @@
-# nuxt-bun-compile
+# Nuxt Bun Compile
 
 [![Socket Badge](https://badge.socket.dev/npm/package/nuxt-bun-compile/0.1.0)](https://badge.socket.dev/npm/package/nuxt-bun-compile/0.1.0)
+
+![Logo Nuxt Bun Compile](/images/logo-transparent--nuxt-bun-compile.png "Logo Nuxt Bun Compile")
 
 > 🚀 Modulo Nuxt que configura automaticamente o Nitro para `bun build --compile`, gerando um **binario executavel standalone** a partir da sua aplicacao Nuxt — sem dependencias de runtime.
 
