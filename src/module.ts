@@ -115,7 +115,7 @@ export default defineNuxtModule<ModuleOptions>({
 
           const cmd = `${bunExecutable} build ${outputPath} --compile --outfile ${options.outfile}`
 
-          logger.info(`Bun v${process.versions.bun} detected, running --compile step`)
+          logger.info(`Bun v${process.versions.bun} detected, running bun compile step`)
           logger.info(`Compiling binary: ${cmd}`)
           try {
             execSync(cmd, { stdio: 'inherit', cwd: nuxt.options.rootDir })
