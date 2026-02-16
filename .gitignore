@@ -1,12 +1,54 @@
-# Ignore node_modules directory
 node_modules
 
-# Ignore .claude and .serena directories
+# AI Agents
 .claude
 .serena
 
-# ignore all .tgz files
+# Temp directories
+.temp
+.tmp
+.cache
+
+# Yarn
+**/.yarn/cache
+**/.yarn/*state*
+
+# Nuxt
+.nuxt
+.output
+.data
+.vercel_build_output
+.build-*
+.netlify
+dist
+
+# Env
+.env
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+*.log*
 *.tgz
 
-# use bundle-lock.json instead of package-lock.json
+# Lock files
 package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+**/nuxtbin
