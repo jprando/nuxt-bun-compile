@@ -35,7 +35,7 @@ bun add -D github:jprando/nuxt-bun-compile
 # Or link locally for development
 git clone https://github.com/jprando/nuxt-bun-compile.git
 cd nuxt-bun-compile && bun install && bun link
-cd your-nuxt-app && bun link nuxt-bun-compile
+cd your-nuxt-app && bun link nuxt-bun-compile && bun nuxt nuxt-bun-compile
 ```
 
 Add to your `nuxt.config.ts`:
