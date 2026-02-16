@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.1.11
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.10...v0.1.11)
+
+### 📖 Documentation
+
+- Add bun nuxt command to local development setup in READMEs ([44e2da5](https://github.com/jprando/nuxt-bun-compile/commit/44e2da5))
+
+### 🏡 Chore
+
+- **release:** V0.1.10 ([1a43642](https://github.com/jprando/nuxt-bun-compile/commit/1a43642))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.10
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.9...v0.1.10)
