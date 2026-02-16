@@ -41,9 +41,19 @@ export default defineNuxtModule<ModuleOptions>({
 
     const logger = useLogger('nuxt-bun-compile')
 
-    // Configure Nitro for bun compile
     nuxt.hook('nitro:config', (nitroConfig: NitroConfig) => {
-      logger.info('Configuring Nitro for bun --compile build')
+      if (
+        globalThis.Bun?.env.TEST
+        || globalThis.Bun?.env.VITEST
+        || globalThis.Bun?.env.NODE_ENV === 'development'
+      ) return
+
+      const isBun = typeof globalThis.Bun !== 'undefined'
+        || process.versions.bun !== undefined
+
+      if (!isBun) return
+
+      logger.info('Configuring Nitro for bun compile')
 
       nitroConfig.preset = 'bun'
       nitroConfig.noExternals = true
@@ -68,7 +78,6 @@ export default defineNuxtModule<ModuleOptions>({
         nitroConfig.rollupConfig.external = allExternals
       }
 
-      // Auto-compile after Nitro build completes
       if (options.autoCompile) {
         nitroConfig.hooks = nitroConfig.hooks || {}
         nitroConfig.hooks.compiled = () => {
