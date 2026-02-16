@@ -40,6 +40,13 @@ export default defineNuxtModule<ModuleOptions>({
     if (!options.enabled) return
 
     const logger = useLogger('nuxt-bun-compile')
+
+    if (nuxt.options._prepare) {
+      logger.info('👋 Welcome to nuxt-bun-compile!')
+      logger.info('📦 To generate a standalone binary, run: bun run -b build')
+      logger.info('🔗 Why -b? https://github.com/jprando/nuxt-bun-compile?tab=readme-ov-file#why-is--b-required')
+      return
+    }
     // @ts-expect-error - NitroConfig is not yet exported by nitropack, but we need it for type safety. Remove when nitropack exports NitroConfig.
     nuxt.hook('nitro:config', (nitroConfig: NitroConfig) => {
       if (
