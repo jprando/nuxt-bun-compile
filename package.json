@@ -4,7 +4,8 @@
   "type": "module",
   "main": "./src/module.ts",
   "scripts": {
-    "format": "dprint fmt package.json tsconfig.json dprint.json ./src/**/*.ts"
+    "format": "dprint fmt package.json tsconfig.json dprint.json ./src/**/*.ts",
+    "prepare": "husky"
   },
   "dependencies": {
     "@nuxt/kit": "^3.21.1",
@@ -13,6 +14,7 @@
   "devDependencies": {
     "@types/node": "^25.2.3",
     "dprint": "^0.51.1",
+    "husky": "^9.1.7",
     "nitropack": "^2.13.1"
   },
   "packageManager": "bun@1.3.9",
