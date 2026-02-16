@@ -1,6 +1,6 @@
 {
   "name": "nuxt-bun-compile",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "description": "Nuxt module that automatically configures Nitro for `bun build --compile`, generating a standalone executable binary from your Nuxt app.",
   "repository": "jprando/nuxt-bun-compile",
   "license": "MIT",
@@ -9,9 +9,19 @@
     ".": {
       "types": "./dist/types.d.mts",
       "import": "./dist/module.mjs"
+    },
+    "./module": {
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
+    },
+    "./*": {
+      "types": "./dist/types.d.mts",
+      "import": "./dist/*"
     }
   },
   "main": "./dist/module.mjs",
+  "module": "./dist/module.mjs",
+  "types": "./dist/types.d.mts",
   "typesVersions": {
     "*": {
       ".": [
