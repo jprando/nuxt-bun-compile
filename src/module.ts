@@ -42,7 +42,7 @@ export default defineNuxtModule<ModuleOptions>({
     const logger = useLogger('nuxt-bun-compile')
 
     // Configure Nitro for bun compile
-    nuxt.hook('nitro:config' as any, (nitroConfig: NitroConfig) => {
+    nuxt.hook('nitro:config', (nitroConfig: NitroConfig) => {
       logger.info('Configuring Nitro for bun --compile build')
 
       nitroConfig.preset = 'bun'
@@ -72,7 +72,7 @@ export default defineNuxtModule<ModuleOptions>({
       if (options.autoCompile) {
         nitroConfig.hooks = nitroConfig.hooks || {}
         nitroConfig.hooks.compiled = () => {
-          const isBun = typeof (globalThis as any).Bun !== 'undefined'
+          const isBun = typeof globalThis.Bun !== 'undefined'
             || process.versions.bun !== undefined
 
           if (!isBun) {
@@ -94,7 +94,7 @@ export default defineNuxtModule<ModuleOptions>({
                 bunExecutable = options.bunPath
               }
             }
-            catch (error) {
+            catch {
               logger.warn(`Could not stat bunPath "${options.bunPath}", assuming it's a direct path.`)
               bunExecutable = options.bunPath
             }
