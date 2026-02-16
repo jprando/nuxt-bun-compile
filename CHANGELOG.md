@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.10
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.9...v0.1.10)
+
+### 📖 Documentation
+
+- Fix emoji rendering and clarify `-b` flag context in READMEs ([e603099](https://github.com/jprando/nuxt-bun-compile/commit/e603099))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.9
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.8...v0.1.9)
