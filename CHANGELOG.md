@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.16
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.15...v0.1.16)
+
+### 📖 Documentation
+
+- Add super flash start section and update install instructions ([dcf31b8](https://github.com/jprando/nuxt-bun-compile/commit/dcf31b8))
+
+### ❤️ Contributors
+
+- Jeudi Prando <jeudiprando@gmail.com>
+
 ## v0.1.15
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.14...v0.1.15)
