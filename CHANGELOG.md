@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.19
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.18...v0.1.19)
+
+### 📖 Documentation
+
+- Remove redundant intro lines from Quick Start sections ([ec3d391](https://github.com/jprando/nuxt-bun-compile/commit/ec3d391))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.18
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.17...v0.1.18)
