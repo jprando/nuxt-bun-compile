@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.18
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.17...v0.1.18)
+
+### 📖 Documentation
+
+- Streamline READMEs and fix Portuguese diacritics ([8c119e1](https://github.com/jprando/nuxt-bun-compile/commit/8c119e1))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.17
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.16...v0.1.17)
