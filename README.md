@@ -10,25 +10,7 @@
 
 ---
 
-> **⚠️ IMPORTANT: Use `bun run -b build` to generate the binary**
->
-> The following commands **DO NOT** trigger binary compilation:
-> ```bash
-> bun run build        # ❌ does not generate the binary
-> npm run build        # ❌ does not generate the binary
-> pnpm run build       # ❌ does not generate the binary
-> ```
->
-> The correct command is:
-> ```bash
-> bun run -b build     # ✅ generates the binary (nuxtbin or the name set in outfile)
-> ```
->
-> [Why is `-b` required?](https://github.com/jprando/nuxt-bun-compile?tab=readme-ov-file#why-is--b-required)
-
----
-
-## 🚀 Super Flash Start
+## ⚡ Quick Start
 
 Add the module to any Nuxt project in two steps:
 
@@ -44,53 +26,20 @@ bun nuxt add nuxt-bun-compile
 bun run -b build
 ```
 
+[Why is `-b` required?](https://github.com/jprando/nuxt-bun-compile?tab=readme-ov-file#why-is--b-required)
+
+[If you encounter memory issues during build](https://github.com/jprando/nuxt-bun-compile?tab=readme-ov-file#why-node_options--max-old-space-size8192)
+
+**Step 3: Run your binary**
+
+```bash
+./nuxtbin
+# Listening on http://localhost:3000
+```
+
 Done! Your standalone binary is ready.
 
----
-
-## ⚡ Quick Start
-
-```bash
-# Install from NPM registry
-bun add -D nuxt-bun-compile
-
-# Or install directly from GitHub
-bun add -D github:jprando/nuxt-bun-compile
-
-# Or link locally for development
-git clone https://github.com/jprando/nuxt-bun-compile.git
-cd nuxt-bun-compile && bun install && bun link
-cd your-nuxt-app && bun link nuxt-bun-compile && bun nuxt add nuxt-bun-compile
-```
-
-Add to your `nuxt.config.ts`:
-
-```ts
-export default defineNuxtConfig({
-  modules: ["nuxt-bun-compile"],
-  bunCompile: {
-    outfile: "myapp",
-  },
-})
-```
-
-Build and run:
-
-```bash
-NODE_OPTIONS="--max-old-space-size=8192" bun run -b build
-./myapp
-```
-
 That's it. One binary. No `node_modules`. No runtime. Just your app.
-
----
-
-## 🌟 Example
-
-Check out a real project using this module:
-
-- **Repository:** [nuxt-duckdb-wasm](https://github.com/jprando/nuxt-duckdb-wasm)
-- **Demo:** [https://nuxt-duckdb-wasm.jeudi.workers.dev/](https://nuxt-duckdb-wasm.jeudi.workers.dev/)
 
 ---
 
@@ -153,14 +102,6 @@ bunCompile: {
 
 ## 🏗️ Architecture
 
-```
-src/
-  module.ts         # Main module — configures Nitro + auto-compiles
-package.json
-tsconfig.json
-dprint.json         # Code formatter config
-```
-
 The module uses a **hook-based architecture**:
 
 - **`nitro:config`** — Adjusts Nitro settings (preset, externals, bundling)
@@ -200,7 +141,7 @@ The **`-b`** (or `--bun`) flag forces Bun to be the runtime that executes the sc
 |---|---|---|
 | 🔤 | **TypeScript** | ESNext target, strict mode, bundler resolution |
 | 🐰 | **Bun** | Runtime 1.3.9+, package manager |
-| 💚 | **Nuxt** | 3.x / 4.x via `@nuxt/kit` + `@nuxt/schema` |
+| 💚 | **Nuxt** | 4.x |
 | 📐 | **dprint** | Code formatter (TS, JSON, MD, TOML, YAML, and more) |
 | 📦 | **ESM** | Pure ES modules (`"type": "module"`) |
 
@@ -208,43 +149,25 @@ The **`-b`** (or `--bun`) flag forces Bun to be the runtime that executes the sc
 
 ## 🧑‍💻 Development
 
-### Commands
-
-```bash
-# Install dependencies
-bun install
-
-# Format code
-bun run format
-
-# Link for local testing
-bun link
-```
-
-### Code Style
-
-- **Formatter:** dprint — always run `bun run format` before committing
-- **Strings:** Double quotes
-- **Semicolons:** Yes
-- **Constants:** `UPPER_SNAKE_CASE` for module-level (`DEFAULT_EXTERNALS`)
-- **Types:** `interface` for public APIs, `import type` for type-only imports
-- **Node built-ins:** Use `node:` prefix (e.g. `node:child_process`)
-
 ### Testing Locally in a Nuxt App
 
 ```bash
-# 1. Link the module
-cd nuxt-bun-compile && bun link
+# 1. Clone this repo for local development
+git clone https://github.com/jprando/nuxt-bun-compile.git
 
-# 2. Use it in your Nuxt app
+# 2. Link the module
+cd nuxt-bun-compile && bun install && bun prepack && bun link
+
+# 3. Use it in your Nuxt app
 cd your-nuxt-app && bun link nuxt-bun-compile
 
-# 3. Add to nuxt.config.ts modules array
+# 4. Add to nuxt.config.ts modules array
+bun nuxt add nuxt-bun-compile
 
-# 4. Build
+# 5. Build
 NODE_OPTIONS="--max-old-space-size=8192" bun run -b build
 
-# 5. Run the binary
+# 6. Run the binary
 ./nuxtbin
 ```
 
