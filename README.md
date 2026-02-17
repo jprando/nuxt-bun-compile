@@ -28,16 +28,39 @@
 
 ---
 
+## 🚀 Super Flash Start
+
+Add the module to any Nuxt project in two steps:
+
+**Step 1: Install the module**
+
+```bash
+bun nuxt add nuxt-bun-compile
+```
+
+**Step 2: Build your binary**
+
+```bash
+bun run -b build
+```
+
+Done! Your standalone binary is ready.
+
+---
+
 ## ⚡ Quick Start
 
 ```bash
-# Install directly from GitHub
+# Install from NPM registry
+bun add -D nuxt-bun-compile
+
+# Or install directly from GitHub
 bun add -D github:jprando/nuxt-bun-compile
 
 # Or link locally for development
 git clone https://github.com/jprando/nuxt-bun-compile.git
 cd nuxt-bun-compile && bun install && bun link
-cd your-nuxt-app && bun link nuxt-bun-compile && bun nuxt nuxt-bun-compile
+cd your-nuxt-app && bun link nuxt-bun-compile && bun nuxt add nuxt-bun-compile
 ```
 
 Add to your `nuxt.config.ts`:
