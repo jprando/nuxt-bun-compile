@@ -12,8 +12,6 @@
 
 ## ⚡ Início Rápido
 
-Adicione o módulo a qualquer projeto Nuxt em dois passos:
-
 **Passo 1: Instalar o módulo**
 
 ```bash
