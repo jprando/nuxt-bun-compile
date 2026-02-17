@@ -24,9 +24,9 @@ bun nuxt add nuxt-bun-compile
 bun run -b build
 ```
 
-[Por que é necessário o parâmetro `-b`?](https://github.com/jprando/nuxt-bun-compile?tab=readme-ov-file#por-que--b-eh-obrigatorio)
+[Por que é necessário o parâmetro `-b`?](https://github.com/jprando/nuxt-bun-compile/blob/main/README.ptBR.md#por-que--b-%C3%A9-obrigat%C3%B3rio)
 
-[Se você enfrentar problemas de memória durante a compilação](https://github.com/jprando/nuxt-bun-compile?tab=readme-ov-file#por-que-node_options---max-old-space-size8192)
+[Se você enfrentar problemas de memória durante a compilação](https://github.com/jprando/nuxt-bun-compile/blob/main/README.ptBR.md#por-que-node_options--max-old-space-size8192)
 
 **Passo 3: Executar seu binário**
 
