@@ -1,9 +1,11 @@
 import { defineNuxtModule, useLogger } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
 import type { NitroConfig } from 'nitropack/types'
-import { execSync } from 'node:child_process'
+import { execFileSync } from 'node:child_process'
 import { statSync } from 'node:fs'
 import { join } from 'node:path'
+
+export type BunCompileTarget = 'bun-linux-x64' | 'bun-linux-x64-musl' | 'bun-linux-arm64' | 'bun-linux-arm64-musl'
 
 export interface ModuleOptions {
   enabled: boolean
@@ -11,7 +13,15 @@ export interface ModuleOptions {
   extraExternals: (string | RegExp)[]
   autoCompile: boolean
   bunPath?: string
+  target?: BunCompileTarget
 }
+
+const VALID_TARGETS: BunCompileTarget[] = [
+  'bun-linux-x64',
+  'bun-linux-x64-musl',
+  'bun-linux-arm64',
+  'bun-linux-arm64-musl',
+]
 
 const DEFAULT_EXTERNALS: (string | RegExp)[] = [
   'sharp',
@@ -116,12 +126,22 @@ export default defineNuxtModule<ModuleOptions>({
             }
           }
 
-          const cmd = `${bunExecutable} build ${outputPath} --compile --outfile ${options.outfile}`
+          // Validate target against whitelist to prevent command injection
+          if (options.target && !VALID_TARGETS.includes(options.target)) {
+            logger.error(`Invalid target: "${options.target}". Must be one of: ${VALID_TARGETS.join(', ')}`)
+            return
+          }
+
+          // Build arguments array (safer than string concatenation)
+          const args = ['build', outputPath, '--compile', '--outfile', options.outfile]
+          if (options.target) {
+            args.push('--target', options.target)
+          }
 
           logger.info(`Bun v${process.versions.bun} detected, running bun compile step`)
-          logger.info(`Compiling binary: ${cmd}`)
+          logger.info(`Compiling binary: ${bunExecutable} ${args.join(' ')}`)
           try {
-            execSync(cmd, { stdio: 'inherit', cwd: nuxt.options.rootDir })
+            execFileSync(bunExecutable, args, { stdio: 'inherit', cwd: nuxt.options.rootDir })
             logger.success(`Binary created: ${options.outfile}`)
           }
           catch (err) {
