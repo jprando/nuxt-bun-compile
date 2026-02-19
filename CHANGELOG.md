@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.23
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.22...v0.1.23)
+
+### 📖 Documentation
+
+- Add clarifying comments to VALID_TARGETS ([5af7abb](https://github.com/jprando/nuxt-bun-compile/commit/5af7abb))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.22
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.21...v0.1.22)
