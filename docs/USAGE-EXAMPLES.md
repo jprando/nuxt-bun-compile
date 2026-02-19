@@ -19,7 +19,7 @@ Then run: `bun run compile`
 
 ### Docker Deployment
 
-Before building, create a `.dockerignore` file to exclude unnecessary files from the build context:
+Create a `.dockerignore` file to exclude unnecessary files from the docker build context:
 
 ```
 .claude
