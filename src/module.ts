@@ -17,10 +17,10 @@ export interface ModuleOptions {
 }
 
 const VALID_TARGETS: BunCompileTarget[] = [
-  'bun-linux-x64',
-  'bun-linux-x64-musl',
-  'bun-linux-arm64',
-  'bun-linux-arm64-musl',
+  'bun-linux-x64', // glibc (padrão)
+  'bun-linux-x64-musl', // musl (Alpine)
+  'bun-linux-arm64', // glibc ARM
+  'bun-linux-arm64-musl', // musl ARM (Alpine)
 ]
 
 const DEFAULT_EXTERNALS: (string | RegExp)[] = [
