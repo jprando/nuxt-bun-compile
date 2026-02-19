@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.26
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.25...v0.1.26)
+
+### 📖 Documentation
+
+- **examples:** Added build and docker deployment examples ([bc68867](https://github.com/jprando/nuxt-bun-compile/commit/bc68867))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.25
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.24...v0.1.25)
