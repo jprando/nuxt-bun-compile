@@ -2,7 +2,7 @@ import { defineNuxtModule, useLogger } from '@nuxt/kit'
 import type { Nuxt } from '@nuxt/schema'
 import type { NitroConfig } from 'nitropack/types'
 import { execFileSync } from 'node:child_process'
-import { statSync } from 'node:fs'
+import { readFileSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 
 export type BunCompileTarget = 'bun-linux-x64' | 'bun-linux-x64-musl' | 'bun-linux-arm64' | 'bun-linux-arm64-musl'
@@ -34,6 +34,31 @@ const DEFAULT_EXTERNALS: (string | RegExp)[] = [
   'mdn-data',
   /^mdn-data\//,
 ]
+
+function detectMusl(): boolean {
+  try {
+    const ldd = execFileSync('ldd', ['--version'], { encoding: 'utf8', stdio: 'pipe' })
+    return ldd.includes('musl')
+  }
+  catch {
+    // musl ldd returns empty version, try /etc/os-release
+    try {
+      const osRelease = readFileSync('/etc/os-release', 'utf8')
+      return osRelease.includes('alpine') || osRelease.includes('musl')
+    }
+    catch {
+      return false
+    }
+  }
+}
+
+function detectTarget(): BunCompileTarget {
+  const arch = process.arch === 'arm64' ? 'arm64' : 'x64'
+  const isMusl = detectMusl()
+
+  const target: BunCompileTarget = `bun-linux-${arch}${isMusl ? '-musl' : ''}` as BunCompileTarget
+  return target
+}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -126,16 +151,21 @@ export default defineNuxtModule<ModuleOptions>({
             }
           }
 
+          // Auto-detect target if not provided
+          const selectedTarget = options.target || detectTarget()
+
           // Validate target against whitelist to prevent command injection
-          if (options.target && !VALID_TARGETS.includes(options.target)) {
-            logger.error(`Invalid target: "${options.target}". Must be one of: ${VALID_TARGETS.join(', ')}`)
+          if (!VALID_TARGETS.includes(selectedTarget)) {
+            logger.error(`Invalid target: "${selectedTarget}". Must be one of: ${VALID_TARGETS.join(', ')}`)
             return
           }
 
           // Build arguments array (safer than string concatenation)
           const args = ['build', outputPath, '--compile', '--outfile', options.outfile]
-          if (options.target) {
-            args.push('--target', options.target)
+          args.push('--target', selectedTarget)
+
+          if (!options.target) {
+            logger.info(`Target auto-detected: ${selectedTarget}`)
           }
 
           logger.info(`Bun v${process.versions.bun} detected, running bun compile step`)
