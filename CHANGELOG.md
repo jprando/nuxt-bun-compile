@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.25
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.24...v0.1.25)
+
+### 📖 Documentation
+
+- Document target option and Alpine Linux dependencies ([9c5d10b](https://github.com/jprando/nuxt-bun-compile/commit/9c5d10b))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.24
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.23...v0.1.24)
