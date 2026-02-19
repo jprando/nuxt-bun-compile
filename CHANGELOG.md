@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.27
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.26...v0.1.27)
+
+### 📖 Documentation
+
+- Add Portuguese (Brazil) translations and reorganize documentation ([3f8cc97](https://github.com/jprando/nuxt-bun-compile/commit/3f8cc97))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.26
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.25...v0.1.26)
