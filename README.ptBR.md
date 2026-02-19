@@ -68,6 +68,7 @@ O módulo se conecta ao pipeline de build do Nuxt e cuida de **tudo** automatica
 | `enabled` | `boolean` | `true` | Habilitar/desabilitar o módulo |
 | `outfile` | `string` | `"nuxtbin"` | Nome do arquivo binário de saída |
 | `bunPath` | `string` | `undefined` | Caminho para o executável do bun. Pode ser um diretório (ex: `/opt/bun/`) ou o caminho direto para o binário (ex: `/opt/bun/bun`). Se for um diretório, '/bun' será anexado. O padrão é 'bun' do PATH do sistema. |
+| `target` | `'bun-linux-x64' \| 'bun-linux-x64-musl' \| 'bun-linux-arm64' \| 'bun-linux-arm64-musl'` | `auto-detectado` | Plataforma alvo para compilação do binário. Auto-detecta sua arquitetura (x64/arm64) e tipo de libc (glibc/musl). Sobrescreva apenas se a auto-detecção falhar ou você precisar de um target específico. |
 | `extraExternals` | `(string \| RegExp)[]` | `[]` | Pacotes adicionais para marcar como external |
 | `autoCompile` | `boolean` | `true` | Executar `bun build --compile` automaticamente após o build |
 
@@ -95,6 +96,32 @@ bunCompile: {
 ```
 
 > **⚠️ Importante:** As bibliotecas listadas em `extraExternals` (assim como as externals padrão) **não são embutidas no binário**. Para que o binário `nuxtbin` execute corretamente, essas dependências precisam estar disponíveis em uma pasta `node_modules` ao lado do binário gerado.
+
+---
+
+## ⚠️ Dependências Nativas no Alpine Linux
+
+Ao compilar com `--target=bun-linux-x64-musl` ou `--target=bun-linux-arm64-musl` (Alpine), o binário resultante ainda faz link dinâmico com `libstdc++` e `libgcc` em tempo de execução. Este é um comportamento documentado do Bun:
+
+- [oven-sh/bun#23910](https://github.com/oven-sh/bun/issues/23910)
+- [oven-sh/bun#918](https://github.com/oven-sh/bun/issues/918)
+
+### Solução: Instalar Bibliotecas Necessárias no Docker
+
+Se rodar o binário em um container Alpine Linux, instale as bibliotecas necessárias:
+
+```dockerfile
+FROM alpine:latest
+
+RUN apk add --no-cache libstdc++ libgcc
+
+COPY nuxtbin /app/
+WORKDIR /app
+
+CMD ["./nuxtbin"]
+```
+
+Isso garante que todas as dependências de runtime estejam disponíveis no container.
 
 ---
 

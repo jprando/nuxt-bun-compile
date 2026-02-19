@@ -68,6 +68,7 @@ The module hooks into Nuxt's build pipeline and handles **everything** automatic
 | `enabled` | `boolean` | `true` | Enable/disable the module |
 | `outfile` | `string` | `"nuxtbin"` | Output binary filename |
 | `bunPath` | `string` | `undefined` | Path to the bun executable. Can be a directory (e.g., `/opt/bun/`) or a direct path to the binary (e.g., `/opt/bun/bun`). If it's a directory, '/bun' will be appended. Defaults to 'bun' from the system's PATH. |
+| `target` | `'bun-linux-x64' \| 'bun-linux-x64-musl' \| 'bun-linux-arm64' \| 'bun-linux-arm64-musl'` | `auto-detected` | Target platform for binary compilation. Auto-detects your system architecture (x64/arm64) and libc type (glibc/musl). Override only if auto-detection fails or you need a specific target. |
 | `extraExternals` | `(string \| RegExp)[]` | `[]` | Additional packages to mark as external |
 | `autoCompile` | `boolean` | `true` | Run `bun build --compile` automatically after build |
 
@@ -95,6 +96,32 @@ bunCompile: {
 ```
 
 > **⚠️ Important:** Libraries listed in `extraExternals` (as well as the default externals) are **not embedded in the binary**. For the `nuxtbin` binary to run correctly, these dependencies must be available in a `node_modules` folder alongside the generated binary.
+
+---
+
+## ⚠️ Native Dependencies in Alpine Linux
+
+When compiling with `--target=bun-linux-x64-musl` or `--target=bun-linux-arm64-musl` (Alpine), the resulting binary still dynamically links to `libstdc++` and `libgcc` at runtime. This is documented Bun behavior:
+
+- [oven-sh/bun#23910](https://github.com/oven-sh/bun/issues/23910)
+- [oven-sh/bun#918](https://github.com/oven-sh/bun/issues/918)
+
+### Solution: Install Required Libraries in Docker
+
+If running the binary in an Alpine Linux container, install the required libraries:
+
+```dockerfile
+FROM alpine:latest
+
+RUN apk add --no-cache libstdc++ libgcc
+
+COPY nuxtbin /app/
+WORKDIR /app
+
+CMD ["./nuxtbin"]
+```
+
+This ensures all runtime dependencies are available in the container.
 
 ---
 
