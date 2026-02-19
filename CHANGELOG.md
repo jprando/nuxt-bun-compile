@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.24
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.23...v0.1.24)
+
+### 🚀 Enhancements
+
+- Add auto-detection of bun compile target based on architecture ([7f448a3](https://github.com/jprando/nuxt-bun-compile/commit/7f448a3))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.23
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.22...v0.1.23)
