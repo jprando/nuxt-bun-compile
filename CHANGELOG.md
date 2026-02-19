@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.22
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.21...v0.1.22)
+
+### 🚀 Enhancements
+
+- Add target option for bun compile with security hardening ([cedf3cf](https://github.com/jprando/nuxt-bun-compile/commit/cedf3cf))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.21
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.20...v0.1.21)
