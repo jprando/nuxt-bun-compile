@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.1.20
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.19...v0.1.20)
+
+### 📖 Documentation
+
+- Fix anchor links in Portuguese README ([b5bb7fb](https://github.com/jprando/nuxt-bun-compile/commit/b5bb7fb))
+
+### 🏡 Chore
+
+- **release:** V0.1.19 ([ad4ef78](https://github.com/jprando/nuxt-bun-compile/commit/ad4ef78))
+- Update dev dependencies and lock file ([5c5dec5](https://github.com/jprando/nuxt-bun-compile/commit/5c5dec5))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.19
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.18...v0.1.19)
