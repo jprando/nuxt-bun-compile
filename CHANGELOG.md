@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.29
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.28...v0.1.29)
+
+### 📖 Documentation
+
+- Center logo image in README files ([4cfe1cd](https://github.com/jprando/nuxt-bun-compile/commit/4cfe1cd))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.28
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.27...v0.1.28)
