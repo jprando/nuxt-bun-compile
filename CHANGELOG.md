@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v0.1.28
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.27...v0.1.28)
+
+### 📖 Documentation
+
+- Improve wording in Docker deployment section ([56bb2cf](https://github.com/jprando/nuxt-bun-compile/commit/56bb2cf))
+- Add Docker automation scripts with --init explanation ([e35db61](https://github.com/jprando/nuxt-bun-compile/commit/e35db61))
+- Remove trailing whitespace from USAGE-EXAMPLES files ([2ee2a9c](https://github.com/jprando/nuxt-bun-compile/commit/2ee2a9c))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.27
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.26...v0.1.27)
