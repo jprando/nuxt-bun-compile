@@ -2,7 +2,7 @@
 
 [![Socket Badge](https://badge.socket.dev/npm/package/nuxt-bun-compile/0.1.0)](https://badge.socket.dev/npm/package/nuxt-bun-compile/0.1.0)
 
-<div style="text-align: center;">
+<div align="center">
   <img src="/images/logo-transparent--nuxt-bun-compile.png" alt="Logo Nuxt Bun Compile" width="50%">
 </div>
 
