@@ -106,5 +106,3 @@ O parâmetro **`--init`** no comando `docker run` é crucial para o gerenciament
 - **Shutdown Limpo:** Quando você pressiona `Ctrl+C` ou o container recebe um sinal de parada, sua app Nuxt será encerrada de forma limpa em vez de ser forçosamente morta
 
 Sem `--init`, sua aplicação pode não ter tempo para limpar recursos, fechar conexões de banco de dados ou descarregar buffers, resultando em perda de dados ou estado inconsistente.
-
-**Dica profissional:** Em produção, use um sistema init como `dumb-init` ou certifique-se de que seu Dockerfile usa `ENTRYPOINT ["dumb-init", "--"]` para gerenciamento de processos ainda mais robusto.

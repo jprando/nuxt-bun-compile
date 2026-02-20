@@ -106,6 +106,3 @@ The **`--init`** flag in the `docker run` command is crucial for proper containe
 - **Clean Shutdown:** When you press `Ctrl+C` or the container receives a stop signal, your Nuxt app will terminate cleanly instead of being forcefully killed
 
 Without `--init`, your application may not have time to clean up resources, close database connections, or flush buffers, leading to data loss or inconsistent state.
-
-**Pro tip:** In production, use an init system like `dumb-init` or ensure your Dockerfile uses `ENTRYPOINT ["dumb-init", "--"]` for even more robust process management.
-
