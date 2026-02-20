@@ -78,3 +78,34 @@ docker run -p 3000:3000 my-nuxt-app
 
 > **Reference:** See the complete multi-stage example in [nuxt-duckdb-wasm/Dockerfile](https://github.com/jprando/nuxt-duckdb-wasm/blob/main/Dockerfile) for a production-ready setup.
 
+### Docker Automation Scripts
+
+Create dedicated npm scripts in your `package.json` for Docker build and run operations:
+
+```json
+{
+  "scripts": {
+    "docker:build": "docker buildx build -t nuxt-bun-compile:latest .",
+    "docker:run": "docker run --name nuxt-bun-compile-latest --rm -ti --init -p 3000:3000 nuxt-bun-compile:latest"
+  }
+}
+```
+
+Then run:
+```bash
+bun run docker:build
+bun run docker:run
+```
+
+#### Why `--init` is Important in `docker:run`
+
+The **`--init`** flag in the `docker run` command is crucial for proper container lifecycle management:
+
+- **Handles Signals Properly:** Ensures that OS signals (SIGTERM, SIGINT) are correctly forwarded to your application, allowing graceful shutdown
+- **Zombie Process Prevention:** Prevents orphaned/zombie processes from accumulating in the container
+- **Clean Shutdown:** When you press `Ctrl+C` or the container receives a stop signal, your Nuxt app will terminate cleanly instead of being forcefully killed
+
+Without `--init`, your application may not have time to clean up resources, close database connections, or flush buffers, leading to data loss or inconsistent state.
+
+**Pro tip:** In production, use an init system like `dumb-init` or ensure your Dockerfile uses `ENTRYPOINT ["dumb-init", "--"]` for even more robust process management.
+
