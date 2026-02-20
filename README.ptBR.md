@@ -2,7 +2,9 @@
 
 [![Socket Badge](https://badge.socket.dev/npm/package/nuxt-bun-compile/0.1.0)](https://badge.socket.dev/npm/package/nuxt-bun-compile/0.1.0)
 
-<img src="/images/logo-transparent--nuxt-bun-compile.png" alt="Logo Nuxt Bun Compile" width="50%">
+<div style="text-align: center;">
+  <img src="/images/logo-transparent--nuxt-bun-compile.png" alt="Logo Nuxt Bun Compile" width="50%">
+</div>
 
 > 🚀 Módulo Nuxt que configura automaticamente o Nitro para `bun build --compile`, gerando um **binário executável standalone** a partir da sua aplicação Nuxt — sem dependências de runtime.
 
