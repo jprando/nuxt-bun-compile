@@ -9,6 +9,14 @@
         "pkief.material-icon-theme",
         "yoavbls.pretty-ts-errors",
         "pflannery.vscode-versionlens",
-        "fab1o.dark-plus-with-italics"
+        "fab1o.dark-plus-with-italics",
+        "wraith13.bracket-lens",
+        "oven.bun-vscode",
+        "formulahendry.auto-rename-tag",
+        "aaron-bond.better-comments",
+        "chuckjonas.duckdb",
+        "ms-vscode.js-debug-nightly",
+        "bradlc.vscode-tailwindcss",
+        "vue.volar"
     ]
 }

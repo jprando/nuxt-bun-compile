@@ -1,6 +1,12 @@
 # Nuxt Bun Compile
 
-[![Socket Badge](https://badge.socket.dev/npm/package/nuxt-bun-compile/0.1.0)](https://badge.socket.dev/npm/package/nuxt-bun-compile/0.1.0)
+[![Socket Badge](https://badge.socket.dev/npm/package/nuxt-bun-compile/0.1.0)](https://badge.socket.dev/npm/package/nuxt-bun-compile/latest)
+![NPM Downloads](https://img.shields.io/npm/dm/nuxt-bun-compile?style=flat&colorA=020420&colorB=00DC82)
+![NPM Last Update](https://img.shields.io/npm/last-update/nuxt-bun-compile?style=flat&colorA=020420&colorB=00DC82)
+![NPM Type Definitions](https://img.shields.io/npm/types/nuxt-bun-compile?style=flat&colorA=020420&colorB=00DC82)
+![NPM Version (with dist tag)](https://img.shields.io/npm/v/nuxt-bun-compile/latest?style=flat&colorA=020420&colorB=00DC82)
+![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/nuxt-bun-compile?style=flat&colorA=020420&colorB=00DC82)
+![NPM License](https://img.shields.io/npm/l/nuxt-bun-compile?style=flat&colorA=020420&colorB=00DC82)
 
 <div align="center">
   <img src="/images/logo-transparent--nuxt-bun-compile.png" alt="Logo Nuxt Bun Compile" width="50%">
