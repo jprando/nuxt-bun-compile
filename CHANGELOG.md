@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.1.31
+
+[compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.30...v0.1.31)
+
+### 🏡 Chore
+
+- Add VS Code extensions/settings and update README badges ([c6d8693](https://github.com/jprando/nuxt-bun-compile/commit/c6d8693))
+- Update dependencies ([cd83a1a](https://github.com/jprando/nuxt-bun-compile/commit/cd83a1a))
+
+### ❤️ Contributors
+
+- Jeudi Prando ([@jprando](https://github.com/jprando))
+
 ## v0.1.30
 
 [compare changes](https://github.com/jprando/nuxt-bun-compile/compare/v0.1.29...v0.1.30)
