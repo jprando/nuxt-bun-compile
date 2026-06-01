@@ -5,7 +5,7 @@ import { execFileSync } from 'node:child_process'
 import { readFileSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 
-export type BunCompileTarget = 'bun-linux-x64' | 'bun-linux-x64-musl' | 'bun-linux-arm64' | 'bun-linux-arm64-musl'
+export type BunCompileTarget = 'bun-linux-x64' | 'bun-linux-x64-musl' | 'bun-linux-arm64' | 'bun-linux-arm64-musl' | 'bun-darwin-x64' | 'bun-darwin-arm64' | 'bun-windows-x64' | 'bun-windows-arm64'
 
 export interface ModuleOptions {
   enabled: boolean
@@ -21,6 +21,10 @@ const VALID_TARGETS: BunCompileTarget[] = [
   'bun-linux-x64-musl', // musl (Alpine)
   'bun-linux-arm64', // glibc ARM
   'bun-linux-arm64-musl', // musl ARM (Alpine)
+  'bun-darwin-x64', // macOS intel series
+  'bun-darwin-arm64', // macOS M series
+  'bun-windows-x64',
+  'bun-windows-arm64',
 ]
 
 const DEFAULT_EXTERNALS: (string | RegExp)[] = [
